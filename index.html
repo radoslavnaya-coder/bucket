@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            margin: 3vh 3vw;
+            padding: 3vh 3vw;
+            text-align: center;
+            border: 1px solid black;
+            box-shadow: 10px  10px 10px rgb(70, 63, 63);
+        }
+        h1{
+            text-transform: uppercase;
+            font-family: sans-serif;
+        }
+        button{
+            font-weight: bold;
+            width: 5vw;
+            height: 3vh;
+        }
+        #max{
+            margin-left: 43vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="one"></h1>
+        <h2 id="count"></h2>
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+    </div>
+    <div>
+        <h1 id="two"></h1>
+        <h2 id="count1"></h2>
+        <button id="plus1">+</button>
+        <button id="minus1">-</button>
+    </div>
+    <div>
+        <h1 id="three"></h1>
+        <h2 id="count2"></h2>
+        <button id="plus2">+</button>
+        <button id="minus2">-</button>
+    </div>
+    <br />
+    <div>
+        <h1 id="four"></h1>
+        <h2 id="count3"></h2>
+        <button id="plus3">+</button>
+        <button id="minus3">-</button>
+    </div>
+    <div>
+        <h1 id="five"></h1>
+        <h2 id="count4"></h2>
+        <button id="plus4">+</button>
+        <button id="minus4">-</button>
+    </div>
+    <br />
+    <button id="max">MAX</button>
+    <h2 id="maxresult"></h2>
+    <script>
+        let arr = [{
+                name: "item 1",
+                count: 0,
+            },
+            {
+                name: "item 2",
+                count: 0,
+            },
+            {
+                name: "item 3",
+                count: 0,
+            },
+            {
+                name: "item 4",
+                count: 0,
+            },
+            {
+                name: "item 5",
+                count: 0,
+            },
+        ];
+        let name = document.getElementById("one");
+        name.innerHTML = arr[0].name;
+        let name2 = document.getElementById("two");
+        name2.innerHTML = arr[1].name;
+        let name3 = document.getElementById("three");
+        name3.innerHTML = arr[2].name;
+        let name4 = document.getElementById("four");
+        name4.innerHTML = arr[3].name;
+        let name5 = document.getElementById("five");
+
+        name5.innerHTML = arr[4].name;
+        count.innerHTML = arr[0].count;
+        count1.innerHTML = arr[1].count;
+        count2.innerHTML = arr[2].count;
+        count3.innerHTML = arr[3].count;
+        count4.innerHTML = arr[4].count;
+
+        plus.addEventListener(
+            "click",
+            function () {
+                while (arr[0].count < 5) {
+                    count.innerHTML = arr[0].count + 1;
+                    arr[0].count++;
+                    break;
+                }
+            },
+            false
+        );
+        plus1.addEventListener(
+            "click",
+            function () {
+                while (arr[1].count < 5) {
+                    count1.innerHTML = arr[1].count + 1;
+                    arr[1].count++;
+                    break;
+                }
+            },
+            false
+        );
+        plus2.addEventListener(
+            "click",
+            function () {
+                while (arr[2].count < 5) {
+                    count2.innerHTML = arr[2].count + 1;
+                    arr[2].count++;
+                    break;
+                }
+            },
+            false
+        );
+        plus3.addEventListener(
+            "click",
+            function () {
+                while (arr[3].count < 5) {
+                    count3.innerHTML = arr[3].count + 1;
+                    arr[3].count++;
+                    break;
+                }
+            },
+            false
+        );
+        plus4.addEventListener(
+            "click",
+            function () {
+                while (arr[4].count < 5) {
+                    count4.innerHTML = arr[4].count + 1;
+                    arr[4].count++;
+                    break;
+                }
+            },
+            false
+        );
+        minus.addEventListener(
+            "click",
+            function () {
+                while ((arr[0].count < 6, arr[0].count > 0)) {
+                    count.innerHTML = arr[0].count - 1;
+                    arr[0].count--;
+                    break;
+                }
+            },
+            false
+        );
+        minus1.addEventListener(
+            "click",
+            function () {
+                while ((arr[1].count < 6, arr[1].count > 0)) {
+                    count1.innerHTML = arr[1].count - 1;
+                    arr[1].count--;
+                    break;
+                }
+            },
+            false
+        );
+        minus2.addEventListener(
+            "click",
+            function () {
+                while ((arr[2].count < 6, arr[2].count > 0)) {
+                    count2.innerHTML = arr[2].count - 1;
+                    arr[2].count--;
+                    break;
+                }
+            },
+            false
+        );
+        minus3.addEventListener(
+            "click",
+            function () {
+                while ((arr[3].count < 6, arr[3].count > 0)) {
+                    count3.innerHTML = arr[3].count - 1;
+                    arr[3].count--;
+                    break;
+                }
+            },
+            false
+        );
+        minus4.addEventListener(
+            "click",
+            function () {
+                while ((arr[4].count < 6, arr[4].count > 0)) {
+                    count4.innerHTML = arr[4].count - 1;
+                    arr[4].count--;
+                    break;
+                }
+            },
+            false
+        );
+        max.addEventListener('click',function(){
+            let result = [
+            arr[0].count,
+            arr[1].count,
+            arr[2].count,
+            arr[3].count,
+            arr[4].count
+            ];
+            if(arr[0].count < 5 && arr[1].count < 5 && arr[2].count < 5 && arr[3].count < 5 && arr[4].count < 5){
+               maxresult.innerHTML = result; 
+            }
+        },false);
+    </script>
+</body>
+
+</html>
