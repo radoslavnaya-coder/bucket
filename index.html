@@ -215,16 +215,19 @@
             false
         );
         max.addEventListener('click',function(){
-            let result = [
-            arr[0].count,
-            arr[1].count,
-            arr[2].count,
-            arr[3].count,
-            arr[4].count
-            ];
-            if(arr[0].count < 5 && arr[1].count < 5 && arr[2].count < 5 && arr[3].count < 5 && arr[4].count < 5){
-               maxresult.innerHTML = result; 
-            }
+            
+            a = arr[0]['count'];
+            for(i = 1; i < arr.length; i++){
+                if (arr[i]['count'] > a){
+                    a = arr[i]['count'];
+                    }
+                }
+            let maxElement = arr.find(item => item.count === a);
+            
+            let newArr = arr.filter(function (item){
+                return item != maxElement;
+            })
+            console.log(newArr);
         },false);
     </script>
 </body>
